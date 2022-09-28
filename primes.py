@@ -7,7 +7,7 @@ def list_primes(n):
     for i in range(2,n+1):
         if(s[i] and s[i]%2==1):
             ls.append(i)
-            for j in range(i,n+1,i):
+            for j in range(i,n+1,i): #iterating through multiples of i and marking them False
                 s[j] = False
     
     return ls
