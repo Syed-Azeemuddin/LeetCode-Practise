@@ -14,7 +14,7 @@ class Solution:
         while(l<=r):
             mid = (l+r)//2
             if(arr[mid]==n):
-                if(mid==0 or (mid-1 >=0 and arr[n-1]!=n)):
+                if(mid-1 >=0 and arr[mid-1]!=n or mid==0):  
                     return mid
                 r = mid-1
             elif(arr[mid]>n):
@@ -29,11 +29,10 @@ class Solution:
 
         while(l<=r):
             mid = (l+r)//2
-
             if(arr[mid]==n):
                 if((mid+1 < len(arr) and arr[mid+1]!=n) or mid==len(arr)-1):
                     return mid
-                r = mid-1
+                l = mid+1
             elif(arr[mid]>n):
                 r = mid-1
             else:
@@ -50,6 +49,6 @@ class Solution:
 
 s = Solution()
 
-answ = s.positions([2,2,3,4,5,6,7,8,8,10],10)
+answ = s.positions([2,2,3,4,5,6,7,8,8,10],8)
 
 print(answ)
