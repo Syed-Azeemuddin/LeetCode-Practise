@@ -3,7 +3,7 @@ from typing import List
 
 class Solution(object):
 
-    def findHash(i):
+    def findHash(self,i):
         return "".join(sorted(i))
 
     def groupAnagram(self, arr:List[str])->List[List[str]]:
@@ -19,3 +19,5 @@ class Solution(object):
         
         for p in m.values():
             ls.append(p)
+        
+        return ls
