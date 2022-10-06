@@ -11,8 +11,8 @@ class LRUCache(object):
     def get(self, key: int) -> int:
         if key in self.m:
             value = self.m[key]
-            self.deq.remove()
-            self.deq.append()
+            self.deq.remove(key)
+            self.deq.append(key)
             return value
         else:
             return -1
